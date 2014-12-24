@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration>
+
+  <!-- Appenders -->
+	<appender name="LOGFILE" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="C:/dev/logs/fulfillmentcenterone.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%p] %c - %m%n"/>
+        </layout>
+	</appender>
+  
+  <!-- Loggers -->
+  <logger name="com.pluralsight"><level value="debug" /></logger>
+  <logger name="org.springframework"><level value="warn" /></logger>
+  <logger name="org.springframework.web"><level value="warn" /></logger>
+
+  <root>
+    <level value="debug" />
+    <appender-ref ref="LOGFILE" />
+  </root>
+
+</log4j:configuration>
